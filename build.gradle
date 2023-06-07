@@ -25,6 +25,10 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
+tasks.named('sonarqube').configure {
+	dependsOn test
+}
+
 sonarqube {
 	properties {
 		property "sonar.projectKey", "jcarlosaglez_JUnit"
